@@ -8,7 +8,7 @@ I wrote this because I don't want to burden my friends with rambling my mouth of
 
 The bot is currently being hosted on [railway.app](https://railway.app) and I'm using Airtable to store all my data. 
 
-At the moment, I do not plan on sending any invite links! This bot is meant as a personal journaling bot for myself as well as a way to teach my friends how to create their own Discord bots. Feel free to fork and host this bot on your own as an example :)
+At the moment, I am only sending invite links to close friends (on request)! This bot is meant as a personal journaling bot for myself as well as a way to teach my friends how to create their own Discord bots. Feel free to fork and host this bot on your own as an example :)
 
 ## Demo
 
