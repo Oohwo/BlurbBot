@@ -1,8 +1,3 @@
-import asyncio
-from code import interact
-from email import message
-from email.mime import image
-from venv import create
 import discord
 import os
 from pyairtable import Table
@@ -15,13 +10,7 @@ import string
 AIRTABLE_API_KEY = os.environ.get('AIRTABLE_API_KEY')
 AIRTABLE_BASE_ID = os.environ.get('AIRTABLE_HANGMAN_BASE_ID')
 
-urls = ['https://cdn.discordapp.com/attachments/1030374642654920755/1034006440064581642/creeper_0.png',
-        'https://cdn.discordapp.com/attachments/1030374642654920755/1034006440458866708/creeper_1.png',
-        'https://cdn.discordapp.com/attachments/1030374642654920755/1034006440823767071/creeper_2.png',
-        'https://cdn.discordapp.com/attachments/1030374642654920755/1034006441213825024/creeper_3.png',
-        'https://cdn.discordapp.com/attachments/1030374642654920755/1034006441700372500/creeper_4.png',
-        'https://cdn.discordapp.com/attachments/1030374642654920755/1034006442165932082/creeper_5.png',
-        'https://cdn.discordapp.com/attachments/1030374642654920755/1034006442543423569/creeper_6.png']
+urls = os.environ.get('CREEPER_IMG_URLS')
 
 class Hangman(commands.Cog):
   
@@ -97,18 +86,18 @@ class Hangman(commands.Cog):
         self.embed.set_image(url=urls[self.num_incorrect])
       await interaction.edit_original_response(embed=self.embed)
 
-    async def reset():
-      self.secret_word = ''
-      self.clue = ''
-      self.num_incorrect = -1
-      self.thread = None
+    # async def reset():
+    #   self.secret_word = ''
+    #   self.clue = ''
+    #   self.num_incorrect = -1
+    #   self.thread = None
 
-      self.guesses = []
-      self.incorrect_guesses = []
-      self.correct_guesses = []
+    #   self.guesses = []
+    #   self.incorrect_guesses = []
+    #   self.correct_guesses = []
 
-      self.embed = None
-      await update_embed()
+    #   self.embed = None
+    #   await update_embed()
     
     self.secret_word = generate_secret_word()
     self.clue = regenerate_clue()
