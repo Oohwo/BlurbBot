@@ -12,10 +12,6 @@ class TestingButtons(commands.Cog):
   async def button_test(self, interaction: discord.Interaction):
     global click_counter
     await interaction.response.send_message(f"You clicked me {click_counter} times! :O", view = button_view())
-  
-async def setup(bot: commands.Bot):
-  '''adds cog to bot'''
-  await bot.add_cog(TestingButtons(bot))
 
 class button_view(discord.ui.View):
   def __init__(self):
@@ -26,3 +22,7 @@ class button_view(discord.ui.View):
     global click_counter
     click_counter += 1
     await interaction.response.edit_message(content = f"You clicked me {click_counter} times! :O")
+
+async def setup(bot: commands.Bot):
+  '''adds cog to bot'''
+  await bot.add_cog(TestingButtons(bot))
