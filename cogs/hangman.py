@@ -10,7 +10,7 @@ import string
 AIRTABLE_API_KEY = os.environ.get('AIRTABLE_API_KEY')
 AIRTABLE_BASE_ID = os.environ.get('AIRTABLE_HANGMAN_BASE_ID')
 
-urls = os.environ.get('CREEPER_IMG_URLS')
+urls = ['https://cdn.discordapp.com/attachments/1030374642654920755/1034006440064581642/creeper_0.png', 'https://cdn.discordapp.com/attachments/1030374642654920755/1034006440458866708/creeper_1.png', 'https://cdn.discordapp.com/attachments/1030374642654920755/1034006440823767071/creeper_2.png','https://cdn.discordapp.com/attachments/1030374642654920755/1034006441213825024/creeper_3.png', 'https://cdn.discordapp.com/attachments/1030374642654920755/1034006441700372500/creeper_4.png', 'https://cdn.discordapp.com/attachments/1030374642654920755/1034006442165932082/creeper_5.png','https://cdn.discordapp.com/attachments/1030374642654920755/1034006442543423569/creeper_6.png']
 
 class Hangman(commands.Cog):
   
