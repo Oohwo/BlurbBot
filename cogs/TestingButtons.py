@@ -28,7 +28,8 @@ class button_view(discord.ui.View):
     global click_counter
     click_counter = 0
     await interaction.response.edit_message(content = f"You clicked me {click_counter} times! :O", view=self)
-
+    button.disabled = True
+    
 async def setup(bot: commands.Bot):
   '''adds cog to bot'''
   await bot.add_cog(TestingButtons(bot))
