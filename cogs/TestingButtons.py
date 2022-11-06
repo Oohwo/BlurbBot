@@ -21,7 +21,13 @@ class button_view(discord.ui.View):
   async def click_me(self, interaction: discord.Interaction, button: discord.ui.Button) -> None:
     global click_counter
     click_counter += 1
-    await interaction.response.edit_message(content = f"You clicked me {click_counter} times! :O")
+    await interaction.response.edit_message(content = f"You clicked me {click_counter} times! :O", view=self)
+
+  @discord.ui.button(label = "reset me", style = discord.ButtonStyle.red, custom_id = "thingy")
+  async def reset_me(self, interaction: discord.Interaction, button: discord.ui.Button) -> None:
+    global click_counter
+    click_counter = 0
+    await interaction.response.edit_message(content = f"You clicked me {click_counter} times! :O", view=self)
 
 async def setup(bot: commands.Bot):
   '''adds cog to bot'''
